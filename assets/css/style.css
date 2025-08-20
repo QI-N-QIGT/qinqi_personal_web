@@ -22,12 +22,13 @@ header.profile-header { border-bottom: 1px solid var(--border); padding-bottom: 
 
 /* 语言切换按钮 */
 .lang-toggle {
-  position: absolute; right: 0; top: 0; transform: translateY(-10px);
-  background: transparent; border: 1px solid var(--border); border-radius: 6px;
-  padding: 6px 10px; font-size: 14px; color: var(--text); cursor: pointer;
-  z-index: 2; /* 保证在头像之上，避免点击被遮挡 */
-}
-.lang-toggle:hover { border-color: var(--primary); color: var(--primary); }
+   position: absolute; right: 0; top: 0; transform: translateY(-10px);
+   background: transparent; border: 1px solid var(--border); border-radius: 6px;
+   padding: 6px 10px; font-size: 14px; color: var(--text); cursor: pointer;
+   z-index: 10; /* 提高层级，避免被导航或头像遮挡 */
+   pointer-events: auto;
+ }
+ .lang-toggle:hover { border-color: var(--primary); color: var(--primary); }
 
 /* 头像照片（右上角） */
 .profile-photo {

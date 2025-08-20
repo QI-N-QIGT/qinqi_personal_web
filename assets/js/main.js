@@ -12,18 +12,17 @@
       emailLabel: 'Email',
       socialAria: 'Social links',
       social: {
-      github: { label: 'GitHub', title: 'GitHub' },
-      scholar: { label: 'Google Scholar', title: 'Google Scholar' },
-      linkedin: { label: 'LinkedIn', title: 'LinkedIn' },
-      researchgate: { label: 'ResearchGate', title: 'ResearchGate' },
-      zhihu: { label: 'Zhihu', title: 'Zhihu' },
-    },
-    gallery: {
-      title: 'Gallery',
-      itemTitle: 'Skógafoss, Iceland, May 2018',
-      quote: '“Where the wind carves colors and the river writes its own song.”',
-    },
-  },
+        github: { label: 'GitHub', title: 'GitHub' },
+        scholar: { label: 'Google Scholar', title: 'Google Scholar' },
+        linkedin: { label: 'LinkedIn', title: 'LinkedIn' },
+        researchgate: { label: 'ResearchGate', title: 'ResearchGate' },
+        zhihu: { label: 'Zhihu', title: 'Zhihu' },
+      },
+      gallery: {
+        title: 'Gallery',
+        itemTitle: 'Skógafoss, Iceland, May 2018',
+        quote: '"Where the wind carves colors and the river writes its own song."',
+      },
       newsTitle: 'News',
       news: [
         { date: '2024.12.01', text: 'Started postdoctoral research at Tsinghua University.' },
@@ -83,24 +82,23 @@
       htmlLang: 'zh-CN',
       title: '秦祺 - 个人主页',
       toggle: 'English',
-      name: '秦祺',
+      name: '秦琦',
       role: '博士后研究员',
       affiliation: '清华大学',
       emailLabel: '邮箱',
       socialAria: '社交链接',
       social: {
-      github: { label: 'GitHub', title: 'GitHub' },
-      scholar: { label: '谷歌学术', title: 'Google Scholar 学术主页' },
-      linkedin: { label: '领英', title: 'LinkedIn 领英' },
-      researchgate: { label: 'ResearchGate', title: 'ResearchGate 学术主页' },
-      zhihu: { label: '知乎', title: '知乎 Zhihu' },
-    },
-    gallery: {
-      title: '相册',
-      itemTitle: '斯科加瀑布，冰岛，2018年5月',
-      quote: '“风雕色彩，河自成歌。”',
-    },
-  },
+        github: { label: 'GitHub', title: 'GitHub' },
+        scholar: { label: 'Google Scholar', title: 'Google Scholar' },
+        linkedin: { label: 'LinkedIn', title: 'LinkedIn' },
+        researchgate: { label: 'ResearchGate', title: 'ResearchGate' },
+        zhihu: { label: '知乎', title: '知乎 Zhihu' },
+      },
+      gallery: {
+        title: '相册',
+        itemTitle: '斯科加瀑布，冰岛，2018年5月',
+        quote: '“风雕色彩，河自成歌。”',
+      },
       newsTitle: '最新动态',
       news: [
         { date: '2024.12.01', text: '在清华大学开始博士后研究工作。' },
@@ -289,16 +287,27 @@
       if (els.confsList) els.confsList.innerHTML = t.conferences.map(formatPublication).join('');
     }
 
+    if (page === 'gallery') {
+      const g = t.gallery || {};
+      const gTitle = document.getElementById('gallery-title');
+      const gItemTitle = document.getElementById('gallery-item-title');
+      const gQuote = document.getElementById('gallery-quote');
+      if (gTitle && g.title) gTitle.textContent = g.title;
+      if (gItemTitle && g.itemTitle) gItemTitle.textContent = g.itemTitle;
+      if (gQuote && g.quote) gQuote.textContent = g.quote;
+    }
+
     if (els.footer) els.footer.innerHTML = t.footer(new Date().getFullYear());
   }
 
-  // 绑定切换
+  // 绑定切换：确保按钮可点击且在任意页面生效
   const toggleBtn = $('lang-toggle');
   if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
+    toggleBtn.addEventListener('click', (e) => {
+      e.preventDefault();
       lang = (lang === 'en') ? 'zh' : 'en';
       render();
-    });
+    }, { passive: true });
   }
 
   // 初始化渲染
