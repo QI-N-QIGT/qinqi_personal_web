@@ -1,0 +1,118 @@
+/* 基础样式 */
+:root {
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --primary: #0ea5e9;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  padding: 0; margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  color: var(--text); background: var(--bg); line-height: 1.6; font-size: 16px;
+}
+
+.container { max-width: 920px; margin: 0 auto; padding: 24px 20px; }
+header.profile-header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; position: relative; min-height: 240px; overflow: hidden; }
+
+.profile-info h1 { font-size: 32px; margin: 0 0 4px; }
+.profile-info h2 { font-size: 18px; margin: 0; color: var(--muted); font-weight: 500; }
+.affiliation p { margin: 4px 0; color: var(--muted); }
+
+/* 语言切换按钮 */
+.lang-toggle {
+  position: absolute; right: 0; top: 0; transform: translateY(-10px);
+  background: transparent; border: 1px solid var(--border); border-radius: 6px;
+  padding: 6px 10px; font-size: 14px; color: var(--text); cursor: pointer;
+  z-index: 2; /* 保证在头像之上，避免点击被遮挡 */
+}
+.lang-toggle:hover { border-color: var(--primary); color: var(--primary); }
+
+/* 头像照片（右上角） */
+.profile-photo {
+  position: absolute; right: 140px; top: 0;
+  width: 160px; height: auto; /* 不裁剪，等比缩放 */
+  /* object-fit: cover; 取消裁剪 */
+  border-radius: 0; border: 1px solid var(--border);
+  transform: translateY(32px); /* 下移一点，使底部再被裁剪一些 */
+  z-index: 1;
+}
+
+@media (max-width: 480px) {
+  .profile-photo {
+    right: 72px; width: 120px; height: auto; transform: translateY(40px);
+  }
+}
+/* 社交链接 */
+.social-links { display: flex; gap: 12px; margin-top: 10px; }
+.social-links a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); transition: all .2s ease; }
+.social-links a:hover { color: var(--primary); border-color: var(--primary); background: rgba(14,165,233,0.06); }
+.icon { width: 18px; height: 18px; }
+
+/* 品牌色：让 SVG 图标更有颜色（SVG 使用 currentColor） */
+#github-link { color: #181717; }
+#scholar-link { color: #4285F4; }
+#linkedin-link { color: #0A66C2; }
+#researchgate-link { color: #00CCBB; } /* RG 品牌青色 */
+#zhihu-link { color: #056DE8; } /* 知乎品牌蓝 */
+
+#github-link:hover { color: #181717; border-color: #181717; background: rgba(24,23,23,0.08); }
+#scholar-link:hover { color: #4285F4; border-color: #4285F4; background: rgba(66,133,244,0.10); }
+#linkedin-link:hover { color: #0A66C2; border-color: #0A66C2; background: rgba(10,102,194,0.10); }
+#researchgate-link:hover { color: #00CCBB; border-color: #00CCBB; background: rgba(0,204,187,0.10); }
+#zhihu-link:hover { color: #056DE8; border-color: #056DE8; background: rgba(5,109,232,0.10); }
+
+main section { margin-bottom: 28px; }
+main h3 { font-size: 20px; margin: 16px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+
+.news ul, .research-interests ul, .awards ul { padding-left: 18px; }
+.news li { margin-bottom: 6px; }
+
+.publications h4 { margin: 16px 0 8px; font-size: 18px; color: var(--text); }
+.publication-list { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.publication-item { padding-left: 6px; border-left: 3px solid var(--border); }
+.publication-item p { margin: 0; }
+
+footer { border-top: 1px solid var(--border); margin-top: 36px; padding-top: 12px; color: var(--muted); font-size: 14px; text-align: center; }
+
+/* 响应式 */
+@media (min-width: 768px) {
+  .profile-info h1 { font-size: 36px; }
+  .publication-list { grid-template-columns: 1fr 1fr; }
+}
+
+/* 交互样式 */
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 顶部主导航 */
+.main-nav { position: relative; z-index: 3; }
+.main-nav ul { list-style: none; padding: 0; margin: 0 0 12px; display: flex; gap: 20px; }
+.main-nav a { color: var(--muted); text-decoration: none; padding: 6px 8px; border-radius: 6px; border: 1px solid transparent; }
+.main-nav a:hover { color: var(--primary); border-color: var(--border); background: rgba(14,165,233,0.06); }
+.main-nav a.active { color: var(--text); font-weight: 600; border-color: var(--border); }
+
+/* Gallery */
+.gallery-section {
+  margin-top: 24px;
+}
+.gallery-item-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 16px 0 12px;
+}
+.gallery-photo {
+  width: 100%;
+  max-width: 960px;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+}
+.gallery-caption {
+  color: #4b5563;
+  font-style: italic;
+  margin: 12px 0 0;
+}
