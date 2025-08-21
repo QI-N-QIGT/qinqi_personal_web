@@ -30,7 +30,7 @@
         { date: '2025.05.17', text: 'Successfully defended my Ph.D. thesis.' }
       ],
       bioTitle: 'Biography',
-      bioP1: 'Qi Qin received the Ph.D. degree from the Institute for Integrated Circuits at Tsinghua University in 2025 and is currently a postdoctoral researcher at Tsinghua University.He is supervised by Prof. B. Gao.',
+      bioP1: 'Qi Qin received the Ph.D. degree from the Institute for Integrated Circuits at Tsinghua University in 2025 and is currently a postdoctoral researcher at Tsinghua University. He is supervised by <a href="https://scholar.google.com/citations?user=czP0vJoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Prof. B. Gao</a>.',
       bioP2: 'His research interests include in-memory computing, efficient machine learning, AI accelerator architecture, edge learning and emerging memory technologies.',
       eduTitle: 'Education',
       edu: [
