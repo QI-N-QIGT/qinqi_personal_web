@@ -67,7 +67,7 @@ header.profile-header { border-bottom: 1px solid var(--border); padding-bottom: 
 main section { margin-bottom: 28px; }
 main h3 { font-size: 20px; margin: 16px 0 12px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
 
-.news ul, .research-interests ul, .awards ul { padding-left: 18px; }
+.news ul, .research-interests ul, .awards ul, .education ul, .talks ul { padding-left: 18px; }
 .news li { margin-bottom: 6px; }
 
 .publications h4 { margin: 16px 0 8px; font-size: 18px; color: var(--text); }
@@ -80,7 +80,7 @@ footer { border-top: 1px solid var(--border); margin-top: 36px; padding-top: 12p
 /* 响应式 */
 @media (min-width: 768px) {
   .profile-info h1 { font-size: 36px; }
-  .publication-list { grid-template-columns: 1fr 1fr; }
+  .publication-list { grid-template-columns: 1fr; }
 }
 
 /* 交互样式 */

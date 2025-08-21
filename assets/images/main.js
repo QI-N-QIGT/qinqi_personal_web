@@ -30,11 +30,11 @@
         { date: '2025.05.17', text: 'Successfully defended my Ph.D. thesis.' }
       ],
       bioTitle: 'Biography',
-      bioP1: 'Qi Qin received the Ph.D. degree from the Institute for Integrated Circuits at Tsinghua University in 2025 and is currently a postdoctoral researcher at Tsinghua University. He is supervised by Prof. B. Gao.',
+      bioP1: 'Qi Qin received the Ph.D. degree from the Institute for Integrated Circuits at Tsinghua University in 2025 and is currently a postdoctoral researcher at Tsinghua University.He is supervised by Prof. B. Gao.',
       bioP2: 'His research interests include in-memory computing, efficient machine learning, AI accelerator architecture, edge learning and emerging memory technologies.',
       eduTitle: 'Education',
       edu: [
-        '2020–2025 Ph.D. in Integrated Circuits Science and Engineering, Tsinghua University',
+        '2020–2025 Ph.D. in Integrated Circuits Science and Engineering, Tsinghua University,',
         '2016–2020 B.Eng. in Electronics Science and Technology, Shandong University'
       ],
       pubsTitle: 'Selected Publications',
@@ -65,15 +65,17 @@
        ],
        talksTitle: 'Conferences & Presentations',
        talks: [
+         'IPFA (Online), Dec. 2020 — . TID Radiation Impacts on Charge-trapping Macaroni 3D NAND Flash Memory',
          'IEDM (Online), Dec. 2022 — Hybrid precoding with a fully-parallel large-scale analog RRAM array for 5G/6G MIMO communication system',
          'SNW (Kyoto, Japan), Jun. 2023 — A Crossbar-wise IR-drop Compensation Schemes for 5G/6G Hybrid Precoding with Highly-parallel Analog RRAM Array'
        ],
-       awardsTitle: 'Honor & Awards',
+       awardsTitle: 'Awards',
       awards: [
-        'Outstanding Teaching Assistant Award of Tsinghua University, 2024',
-        'Tsinghua University Comprehensive Scholarship, 2024 & 2022',
-        'Shandong University Outstanding Graduate, 2020',
-        'Shandong University Outstanding Student, 2019 & 2017',
+        '2023 National Graduate Scholarship',
+        '2023 Outstanding Graduate of Tsinghua University',
+        '2022 First Prize, Integrated Circuit Design Competition',
+        '2022 Innovation Award',
+        '2021 Academic Scholarship, Tsinghua University'
       ],
       footer: (y) => `© ${y} Qi Qin. All rights reserved.`
     },
@@ -100,13 +102,13 @@
       },
       newsTitle: '最新动态',
       news: [
-        { date: '2025.7.03', text: '在清华大学开始博士后研究工作。' },
+        { date: '2025.07.03', text: '在清华大学开始博士后研究工作。' },
         { date: '2025.06.19', text: '获得清华大学集成电路学院博士学位。' },
-        { date: '2025.05.17', text: '博士论文答辩顺利通过。' }
+        { date: '2025.05.17', text: '博士论文答辩顺利通过。' },
       ],
       bioTitle: '个人简介',
       bioP1: '秦琦于2025年获得清华大学集成电路学院博士学位，现为清华大学博士后研究员。导师为<a href="https://scholar.google.com/citations?user=czP0vJoAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">高滨教授</a>。',
-      bioP2: '研究兴趣包括存算一体、高效机器学习、AI 加速器架构、边缘学习以及新型存储器技术。',
+      bioP2: '研究兴趣包括集成电路设计、AI加速器架构、存算一体、低功耗芯片与新型存储技术等。已发表论文15+篇，累计被引474+次（h指数：7，i10指数：6）。',
       eduTitle: '教育经历',
       edu: [
         '2020–2025 清华大学 集成电路科学与工程 博士',
@@ -145,10 +147,11 @@
       ],
       awardsTitle: '获奖情况',
       awards: [
-        '清华大学优秀助教奖，2024年',
-        '清华大学综合奖学金，2024年与2022年',
-        '山东大学优秀毕业生，2020年',
-        '山东大学优秀学生，2019年与2017年',
+        '2023年 研究生国家奖学金',
+        '2023年 清华大学优秀研究生',
+        '2022年 集成电路设计竞赛一等奖',
+        '2022年 学术创新奖',
+        '2021年 清华大学学业奖学金'
       ],
       footer: (y) => `© ${y} 秦琦. 保留所有权利.`
     }
@@ -335,7 +338,7 @@
       if (els.newsList) els.newsList.innerHTML = t.news.map(n => `<li><strong>${n.date}</strong>, ${n.text}</li>`).join('');
 
       if (els.bioTitle) els.bioTitle.textContent = t.bioTitle;
-      if (els.bioP1) els.bioP1.textContent = t.bioP1;
+      if (els.bioP1) els.bioP1.innerHTML = t.bioP1;
       if (els.bioP2) els.bioP2.textContent = t.bioP2;
 
       // 教育经历
