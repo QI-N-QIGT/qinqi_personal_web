@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Qi Qin - Gallery</title>
+  <title>Qi Qin - Advice</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 </head>
-<body data-page="gallery">
+<body data-page="advice">
    <div class="container">
     <header class="profile-header" style="position: relative;">
        <nav class="main-nav">
          <ul>
            <li><a href="index.html" class="nav-link" id="nav-home">Home</a></li>
            <li><a href="publications.html" class="nav-link" id="nav-publications">Publications</a></li>
-           <li><a href="advice.html" class="nav-link" id="nav-advice">Advice</a></li>
-           <li><a href="gallery.html" class="nav-link active" id="nav-gallery">Gallery</a></li>
+           <li><a href="advice.html" class="nav-link active" id="nav-advice">Advice</a></li>
+           <li><a href="gallery.html" class="nav-link" id="nav-gallery">Gallery</a></li>
          </ul>
        </nav>
        <button id="lang-toggle" class="lang-toggle" aria-label="Switch language">中文</button>
@@ -58,16 +58,42 @@
     </header>
 
     <main>
-      <section class="gallery-section">
-        <h3 id="gallery-title">Gallery</h3>
-        <article class="gallery-item">
-          <img src="gallery/ICT_onur.jpg" alt="ICT Onur lecture" class="gallery-photo" />
-          <p class="gallery-caption">ICT 2025 0902 Onur lecture</p>
-        </article>
-        <article class="gallery-item">
-          <img src="gallery/graduated_doctor.jpg" alt="Doctoral Graduation" class="gallery-photo" />
-          <p class="gallery-caption">Doctoral Graduation</p>
-        </article>
+      <section class="advice-section">
+        <h3 id="advice-title">Life Advice</h3>
+        
+        <div class="advice-cards">
+          <article class="advice-card">
+            <div class="advice-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="m12 1 1.09 3.26L16 5l-2.26.91L12 9 9.74 5.91 8 5l3.91-.74L12 1z"/>
+                <path d="M19 12h2m-2 0a7 7 0 1 1-14 0 7 7 0 0 1 14 0ZM2.5 17l1.5-1 1.5 1"/>
+              </svg>
+            </div>
+            <h4 id="advice-1-title" class="advice-card-title">Fast Iteration for Long-term Goals</h4>
+            <p id="advice-1-content" class="advice-card-content">
+              Pursue long-term goals, but don't fall into the trap of perfectionism. 
+              Embrace rapid iteration and continuous improvement. Speed and agility often 
+              triumph over meticulous craftsmanship when building towards ambitious objectives.
+            </p>
+          </article>
+
+          <article class="advice-card">
+            <div class="advice-icon">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m8 3 4 8 5-5v11H5V6z"/>
+                <path d="M2 3h6"/>
+                <path d="M6 18h15"/>
+              </svg>
+            </div>
+            <h4 id="advice-2-title" class="advice-card-title">Aim High, Dream Big</h4>
+            <p id="advice-2-content" class="advice-card-content">
+              Set your sights on the highest peaks. As the ancient Chinese wisdom goes: 
+              "Aim for the top and you'll get the middle; aim for the middle and you'll get the bottom." 
+              Ambitious goals, even if not fully achieved, lead to extraordinary outcomes.
+            </p>
+          </article>
+        </div>
       </section>
     </main>
 

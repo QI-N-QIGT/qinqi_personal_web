@@ -1,4 +1,4 @@
-﻿// 多语言与交互脚本
+// 多语言与交互脚本
 (function () {
   // 数据：中英文本
   const i18n = {
@@ -23,6 +23,13 @@
         itemTitle: 'Skógafoss, Iceland, May 2018',
         quote: '"Where the wind carves colors and the river writes its own song."',
       },
++     advice: {
++       title: 'Advice',
++       a1Title: 'Pursue Long-term Goals, Iterate Fast',
++       a1Content: "Pursue long-term goals without over-polishing; favor fast iteration, small steps, and continuous improvement.",
++       a2Title: 'Aim high, dream big',
++       a2Content: 'Aim for the top and you may reach the middle; aim for the middle and you may end up at the bottom.'
++     },
       newsTitle: 'News',
       news: [
         { date: '2025.7.03', text: 'Started postdoctoral research at Tsinghua University. ' },
@@ -98,6 +105,13 @@
         itemTitle: '斯科加瀑布，冰岛，2018年5月',
         quote: '“风雕色彩，河自成歌。”',
       },
++     advice: {
++       title: '建议',
++       a1Title: '追求长期目标，快速迭代',
++       a1Content: '追求长期目标，但不要慢工出细活；以快速迭代、小步快跑、持续改进为主。',
++       a2Title: 'Aim high, dream big',
++       a2Content: '求其上，得其中；求其中，得其下。志存高远，胸怀大梦。'
++     },
       newsTitle: '最新动态',
       news: [
         { date: '2025.7.03', text: '在清华大学开始博士后研究工作。' },
@@ -160,7 +174,7 @@
   // DOM 引用
   const $ = (id) => document.getElementById(id);
 
-  const page = location.pathname.endsWith('publications.html') ? 'pubs' : (location.pathname.endsWith('gallery.html') ? 'gallery' : 'home');
+  const page = location.pathname.endsWith('publications.html') ? 'pubs' : (location.pathname.endsWith('gallery.html') ? 'gallery' : (location.pathname.endsWith('advice.html') ? 'advice' : 'home'));
   const els = {
     html: document.documentElement,
     title: document.querySelector('title'),
@@ -316,7 +330,7 @@
       (lang === 'en' ? 'Qi Qin - Publications' : '秦琦 - 论文') :
       (page === 'gallery' ?
         (lang === 'en' ? 'Qi Qin - Gallery' : '秦琦 - 相册') :
-        t.title);
+        (page === 'advice' ? (lang === 'en' ? 'Qi Qin - Advice' : '秦琦 - 建议') : t.title));
     els.title.textContent = titleText;
     
     els.toggle.textContent = t.toggle;
@@ -373,7 +387,20 @@
       if (gItemTitle && g.itemTitle) gItemTitle.textContent = g.itemTitle;
       if (gQuote && g.quote) gQuote.textContent = g.quote;
     }
-
++
++    if (page === 'advice') {
++      const a = t.advice || {};
++      const aTitle = document.getElementById('advice-title');
++      const a1t = document.getElementById('advice-1-title');
++      const a1c = document.getElementById('advice-1-content');
++      const a2t = document.getElementById('advice-2-title');
++      const a2c = document.getElementById('advice-2-content');
++      if (aTitle && a.title) aTitle.textContent = a.title;
++      if (a1t && a.a1Title) a1t.textContent = a.a1Title;
++      if (a1c && a.a1Content) a1c.textContent = a.a1Content;
++      if (a2t && a.a2Title) a2t.textContent = a.a2Title;
++      if (a2c && a.a2Content) a2c.textContent = a.a2Content;
++    }
     if (els.footer) els.footer.innerHTML = t.footer(new Date().getFullYear());
   }
 
